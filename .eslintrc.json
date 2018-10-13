@@ -1,0 +1,109 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb",
+        "plugin:jest/recommended"
+    ],
+    "plugins": [
+        "class-property",
+        "babel",
+        "jest"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unreachable": "warn",
+        "no-unused-vars": "warn",
+        "constructor-super": "warn",
+        "valid-typeof": "warn",
+        "linebreak-style": "off",
+        "react/prefer-stateless-function": "warn",
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/jsx-indent": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "function-paren-newline": "off",
+        "jsx-a11y/heading-has-content": "off",
+        "arrow-body-style": [
+            "error",
+            "as-needed"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "no-use-before-define": "off",
+        "class-methods-use-this": "off",
+        "react/no-multi-comp": "warn",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react/jsx-indent-props": "off",
+        "react/no-did-mount-set-state": "warn",
+        "consistent-return": "warn",
+        "import/prefer-default-export": "warn",
+        "babel/no-invalid-this": 1,
+        "react/sort-comp": [
+            1,
+            {
+                "order": [
+                    "constructor",
+                    "instance-variables",
+                    "static-methods",
+                    "/^handle.+$/",
+                    "everything-else",
+                    "lifecycle",
+                    "render"
+                ]
+            }
+        ],
+        "react/jsx-boolean-value": "warn",
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": [
+                    "Link"
+                ],
+                "specialLink": [
+                    "to"
+                ]
+            }
+        ],
+        "react/jsx-one-expression-per-line": "warn",
+        "react/destructuring-assignment": "warn",
+        "object-curly-newline": "warn",
+        "jsx-a11y/no-autofocus": "warn",
+        "max-len": [
+            "error",
+            {
+                "code": 120,
+                "tabWidth": 4
+            }
+        ]
+    }
+}

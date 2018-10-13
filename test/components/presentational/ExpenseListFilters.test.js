@@ -17,16 +17,14 @@ beforeEach(() => {
     sortByAmount = jest.fn();
     setStartDate = jest.fn();
     setEndDate = jest.fn();
-    wrapper = shallow(
-        <ExpenseListFilters
-            filters={defaultFilters}
-            setText={setText}
-            sortByDate={sortByDate}
-            sortByAmount={sortByAmount}
-            setStartDate={setStartDate}
-            setEndDate={setEndDate}
-        />
-    );
+    wrapper = shallow(<ExpenseListFilters
+        filters={defaultFilters}
+        setText={setText}
+        sortByDate={sortByDate}
+        sortByAmount={sortByAmount}
+        setStartDate={setStartDate}
+        setEndDate={setEndDate}
+    />);
 });
 
 test('Should render ExpenseListFilters with default data correctly', () => {

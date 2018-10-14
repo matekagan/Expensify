@@ -5,9 +5,7 @@ exports[`Should render expense dashboard page 1`] = `
   <h3>
     Dashboard
   </h3>
-  <p>
-    some text
-  </p>
+  <Connect(ExpenseSummary) />
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
 </div>

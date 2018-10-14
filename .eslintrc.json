@@ -98,13 +98,6 @@
         "react/destructuring-assignment": "warn",
         "object-curly-newline": "warn",
         "jsx-a11y/no-autofocus": "warn",
-        "max-len": [
-            "error",
-            {
-                "code": 120,
-                "tabWidth": 4
-            }
-        ],
-        "object-curly-newline": "off"
+        "max-len": "warn"
     }
 }

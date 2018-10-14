@@ -3,8 +3,8 @@ import {
     BrowserRouter, Route, Switch
 } from 'react-router-dom';
 import ExpenseDashboardPage from '../components/pages/ExpenseDashboardPage';
-import AddExpensePage from '../components/pages/AddExpensePage';
-import EditExpensePage from '../components/pages/EditExpensePage';
+import AddExpensesPage from '../components/pages/AddExpensePage';
+import EditExpensesPage from '../components/pages/EditExpensePage';
 import HelpPage from '../components/pages/HelpPage';
 import NotFoundPage from '../components/pages/NotFoundPage';
 import Header from '../components/presentational/Header';
@@ -21,11 +21,11 @@ const AppRouter = () => (
                 />
                 <Route
                     path="/create"
-                    component={AddExpensePage}
+                    component={AddExpensesPage}
                 />
                 <Route
                     path="/edit/:id"
-                    component={EditExpensePage}
+                    component={EditExpensesPage}
                 />
                 <Route
                     path="/help"

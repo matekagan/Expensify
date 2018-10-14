@@ -9,11 +9,19 @@ export const ExpenseSummary = ({ totalAmount, expenseCount }) => {
     const pluralDependentText = expenseCount === 1 ? 'expense' : 'expenses';
     return (
         <div>
+<<<<<<< HEAD
             <h1>
                 {
                     `Viewing ${expenseCount} ${pluralDependentText} totalling ${formattedNumber}`
                 }
             </h1>
+=======
+            <h4>
+                {
+                    `Viewing ${expenseCount} ${pluralDependentText} totalling ${formattedNumber}`
+                }
+            </h4>
+>>>>>>> 181686e69ef7d88db50278d2dcf13a4bc6d72fec
         </div>
     );
 };

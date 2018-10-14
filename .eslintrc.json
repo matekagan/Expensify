@@ -104,6 +104,7 @@
                 "code": 120,
                 "tabWidth": 4
             }
-        ]
+        ],
+        "object-curly-newline": "off"
     }
 }

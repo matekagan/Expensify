@@ -4,22 +4,19 @@ import numeral from 'numeral';
 import selectExpenses from '../../selectors/expenses';
 import totalExpenses from '../../selectors/expenses-total';
 
-export const ExpenseSummary = ({ totalAmount, expenseCount }) => (
-    <div>
-        <h4>
-            {
-                expenseCount === 0
-                    ? 'No expenses to show'
-                    : `Viewing 
-                ${expenseCount} 
-                expense
-                ${expenseCount === 1 ? '' : 's'} 
-                totalling 
-                ${numeral(totalAmount / 100).format('$0,0.00')}`
-            }
-        </h4>
-    </div>
-);
+export const ExpenseSummary = ({ totalAmount, expenseCount }) => {
+    const formattedNumber = numeral(totalAmount / 100).format('$0,0.00');
+    const pluralDependentText = expenseCount === 1 ? 'expense' : 'expenses';
+    return (
+        <div>
+            <h4>
+                {
+                    `Viewing ${expenseCount} ${pluralDependentText} totalling ${formattedNumber}`
+                }
+            </h4>
+        </div>
+    );
+};
 
 const mapStateToProps = state => ({
     ...totalExpenses(selectExpenses(state.expenses, state.filters))

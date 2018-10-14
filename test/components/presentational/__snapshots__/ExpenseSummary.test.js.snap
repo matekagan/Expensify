@@ -3,12 +3,7 @@
 exports[`Should render correctly with multiple visible expense 1`] = `
 <div>
   <h4>
-    Viewing 
-                    3 
-                    expense
-                    s 
-                    totalling 
-                    $12,413.00
+    Viewing 3 expenses totalling $12,413.00
   </h4>
 </div>
 `;
@@ -16,7 +11,7 @@ exports[`Should render correctly with multiple visible expense 1`] = `
 exports[`Should render correctly with no visible expenses 1`] = `
 <div>
   <h4>
-    No expenses to show
+    Viewing 0 expenses totalling $0.00
   </h4>
 </div>
 `;
@@ -24,12 +19,7 @@ exports[`Should render correctly with no visible expenses 1`] = `
 exports[`Should render correctly with single visible expense 1`] = `
 <div>
   <h4>
-    Viewing 
-                    1 
-                    expense
-                     
-                    totalling 
-                    $123.00
+    Viewing 1 expense totalling $123.00
   </h4>
 </div>
 `;

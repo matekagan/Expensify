@@ -19,17 +19,15 @@ test('Should remove nothig when invalid id is passed', () => {
 
 test('Should add expense', () => {
     const testExpense = {
+        id: 'someID',
         description: 'Coffe in MCaffe',
         amount: 1200,
+        note: '',
         createdAt: 11221122
     };
     expect(expensesReducer(testExpenses, addExpense(testExpense))).toEqual([
         ...testExpenses,
-        {
-            ...testExpense,
-            note: '',
-            id: expect.any(String)
-        }
+        testExpense
     ]);
 });
 

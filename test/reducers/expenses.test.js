@@ -1,5 +1,5 @@
 import expensesReducer from '../../src/reducers/expenses';
-import { addExpense, editExpense, removeExpense } from '../../src/actions/expenses';
+import { addExpense, editExpense, removeExpense, setExpenses } from '../../src/actions/expenses';
 import testExpenses from '../fixtures/expenses';
 
 test('Should set default state', () => {
@@ -54,4 +54,16 @@ test('Should not edit expense when invalid id is passed', () => {
         amount: 300
     };
     expect(expensesReducer(testExpenses, editExpense({ id: 'invalidID', updates }))).toEqual(testExpenses);
+});
+
+test('Should set expenses', () => {
+    expect(expensesReducer(
+        [
+            {
+                id: 'asda',
+                amount: 1231
+            }
+        ],
+        setExpenses(testExpenses)
+    )).toEqual(testExpenses);
 });

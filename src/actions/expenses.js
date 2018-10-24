@@ -21,7 +21,8 @@ export const setExpenses = expenses => ({
     expenses
 });
 
-export const startAddExpense = (expenseData = {}) => (dispatch) => {
+export const startAddExpense = (expenseData = {}) => (dispatch, getState) => {
+    const { uid } = getState().auth;
     const {
         description = '',
         note = '',
@@ -29,7 +30,7 @@ export const startAddExpense = (expenseData = {}) => (dispatch) => {
         createdAt = 0
     } = expenseData;
     const expense = { description, note, amount, createdAt };
-    return database.ref('expenses').push(expense).then((reference) => {
+    return database.ref(`users/${uid}/expenses`).push(expense).then((reference) => {
         dispatch(addExpense({
             id: reference.key,
             ...expense
@@ -37,24 +38,33 @@ export const startAddExpense = (expenseData = {}) => (dispatch) => {
     });
 };
 
-export const startSetExpenses = () => dispatch => database.ref('expenses').once('value')
-    .then((snapshot) => {
-        const expenses = [];
-        snapshot.forEach((childSnapshot) => {
-            expenses.push({
-                id: childSnapshot.key,
-                ...childSnapshot.val()
+export const startSetExpenses = () => (dispatch, getState) => {
+    const { uid } = getState().auth;
+    return database.ref(`users/${uid}/expenses`).once('value')
+        .then((snapshot) => {
+            const expenses = [];
+            snapshot.forEach((childSnapshot) => {
+                expenses.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
             });
+            dispatch(setExpenses(expenses));
         });
-        dispatch(setExpenses(expenses));
-    });
+};
 
-export const startRemoveExpense = ({ id }) => dispatch => database.ref(`expenses/${id}`).remove()
-    .then(() => {
-        dispatch(removeExpense({ id }));
-    });
+export const startRemoveExpense = ({ id }) => (dispatch, getState) => {
+    const { uid } = getState().auth;
+    return database.ref(`users/${uid}/expenses/${id}`).remove()
+        .then(() => {
+            dispatch(removeExpense({ id }));
+        });
+};
 
-export const startEditExpense = ({ id, updates }) => dispatch => database.ref(`expenses/${id}`)
-    .update(updates).then(() => {
-        dispatch(editExpense({ id, updates }));
-    });
+export const startEditExpense = ({ id, updates }) => (dispatch, getState) => {
+    const { uid } = getState().auth;
+    return database.ref(`users/${uid}/expenses/${id}`)
+        .update(updates).then(() => {
+            dispatch(editExpense({ id, updates }));
+        });
+};

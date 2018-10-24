@@ -4,39 +4,33 @@ import createHistory from 'history/createBrowserHistory';
 import ExpenseDashboardPage from '../components/pages/ExpenseDashboardPage';
 import AddExpensesPage from '../components/pages/AddExpensePage';
 import EditExpensesPage from '../components/pages/EditExpensePage';
-import HelpPage from '../components/pages/HelpPage';
 import SignInPage from '../components/pages/LoginPage';
 import NotFoundPage from '../components/pages/NotFoundPage';
-import NavHeader from '../components/presentational/Header';
-import { PrivateRoute } from './PrivateRoute';
+import PrivatePage from './PrivateRoute';
+import PublicPage from './PublicRoute';
 
 export const history = createHistory();
 
 const AppRouter = () => (
     <Router history={history}>
         <div>
-            <NavHeader />
             <Switch>
-                <Route
+                <PublicPage
                     path="/"
                     component={SignInPage}
                     exact={true}
                 />
-                <PrivateRoute
+                <PrivatePage
                     path="/dashboard"
                     component={ExpenseDashboardPage}
                 />
-                <PrivateRoute
+                <PrivatePage
                     path="/create"
                     component={AddExpensesPage}
                 />
-                <PrivateRoute
+                <PrivatePage
                     path="/edit/:id"
                     component={EditExpensesPage}
-                />
-                <Route
-                    path="/help"
-                    component={HelpPage}
                 />
                 <Route component={NotFoundPage} />
             </Switch>

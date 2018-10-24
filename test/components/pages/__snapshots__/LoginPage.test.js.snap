@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Login page correclty 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+     Log In 
+  </button>
+</div>
+`;

@@ -94,7 +94,7 @@
                 ]
             }
         ],
-        "react/jsx-one-expression-per-line": "warn",
+        "react/jsx-one-expression-per-line": "off",
         "react/destructuring-assignment": "warn",
         "object-curly-newline": "warn",
         "jsx-a11y/no-autofocus": "warn",

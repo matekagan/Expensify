@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly with multiple visible expense 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing
+      <span>
+         
+        3
+         
+      </span>
+      expenses 
+      totalling
+      <span>
+         
+        $12,413.00
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        activeClassName="navlink-active"
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Create Expense
+      </Link>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render correctly with no visible expenses 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing
+      <span>
+         
+        0
+         
+      </span>
+      expenses 
+      totalling
+      <span>
+         
+        $0.00
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        activeClassName="navlink-active"
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Create Expense
+      </Link>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render correctly with single visible expense 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing
+      <span>
+         
+        1
+         
+      </span>
+      expense 
+      totalling
+      <span>
+         
+        $123.00
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        activeClassName="navlink-active"
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Create Expense
+      </Link>
+    </div>
+  </div>
+</div>
+`;

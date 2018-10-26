@@ -1,0 +1,21 @@
+
+.button {
+    background: $blue;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: $font-l-size;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
+}
+
+.button--link {
+    background: none;
+}
+
+.button--secondary {
+    background: $grey;
+}

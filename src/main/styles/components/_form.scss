@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    > * {
+        margin-bottom: $m-size;
+    }
+
+    > p {
+        color: $red-warning;
+    }
+}
+
+.form__error {
+    margin: 0 0 $m-size 0;
+    font-style: italic;
+
+}
